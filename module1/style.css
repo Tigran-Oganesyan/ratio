@@ -1,13 +1,17 @@
 @font-face {
-	font-family: 'Ubuntu'; 
-	src: url(./font-family/Ubuntu-Regular.ttf); 
+	font-family: 'Ubuntu';
+	src: url(./font-family/Ubuntu-Regular.ttf);
 }
 
 *{
   width: 1600px;
   margin: 0 auto;
+/* TODO: ошибка, свойство linear-gradient не доступно для background-color, его можно использовать для background */
   background-color: linear-gradient(180deg, #F6FAFD 0%, #FFFFFF 19.4%);
   color: #212353;
+/* TODO: следует указывать запасной шрифт на тот случай, если Ubuntu будет недоступен, для Ubuntu это семейство sans-serif
+     font-family: 'Ubuntu', sans-serif;
+*/
   font-family: 'Ubuntu';
 }
 
@@ -32,12 +36,16 @@
   height: 35px;
 }
 .header__nav{
+/* TODO: дважды встречается свойство margin (в начале и в конце блока), их оба можно заменить одним:
+     margin: 0 0 0 121px;
+*/
   margin: 0;
   display: flex;
   justify-content: space-between;
   list-style-type: none;
   max-width: 231px;
   text-align: right;
+/* TODO: заменить одним правилом */
   margin-left: 121px;
 }
 .header__nav li{
@@ -54,11 +62,14 @@
   text-decoration: underline;
 }
 .header__headline{
+/* TODO: запись из двух свойств можно заменить:
+      margin: 143px 0 0; */
   margin: 0;
   margin-top: 143px;
   width: 645px;
 }
 .header__info{
+/* TODO: для margin нулевые значения не требуют указания единиц измерения -- уберите px */
   margin: 0px;
   width: 645px;
   position: relative;
@@ -71,14 +82,19 @@
   font-weight: 700;
 }
 .header__info p{
+/* TODO: для margin сократить запись до одного правила margin: 50px 0 0; */
   margin: 0;
   margin-top: 50px;
   width: 380px;
   font-size: 18px;
+/* TODO: font-weight не указывается в px, он указывается без единиц измерения, как есть, т.е. 100-900,
+также можно указывать bold, italic и др. */
   font-weight: 500px;
+/*TODO: нельзя указывать дробные писксели*/
   line-height: 28.8px;
 }
 .header__info button{
+/* TODO: для margin сократить запись до одного правила margin: 50px 0 0; */
   margin: 0;
   margin-top: 50px;
   width: 170px;
@@ -132,6 +148,7 @@
 }
 
 .features{
+/* TODO: Запись можно сократить margin: 150px 240px 0; */
   margin: 0;
   margin-top: 150px;
   max-width: 1117px;
@@ -139,6 +156,7 @@
   margin-right: 240px;
 }
 .features__title{
+/* TODO: Запись можно сократить margin: 0 auto; */
   margin: 0;
   width: 584px;
   text-align: center;
@@ -164,6 +182,7 @@
   justify-content: space-between;
 }
 .features__block{
+/*TODO: запись можно сократить */
   margin:0;
   margin-top: 50px;
   width: 531px;
@@ -186,10 +205,12 @@
   z-index: 2;
 }
 .block__info{
+/*TODO: запись margin можно сократить */
   position: relative;
   margin: 0;
   top:-575px;
   float: right;
+/*TODO: нельзя использовать дробные писксели, пиксель это минимальная единица, как точка */
   margin-left: 29.29px;
   width: 442px;
   height: 358px;
@@ -197,6 +218,8 @@
   z-index: 1;
 }
 .block__info h4{
+/*TODO: запись margin можно сократить margin: 49px 0 0 172px; */
+/*TODO: нельзя использовать дробные писксели, пиксель это минимальная единица, как точка */
   margin: 0;
   margin-top: 49px;
   margin-left: 172.29px;
@@ -205,6 +228,8 @@
   font-weight: 400;
 }
 .block__info p{
+/*TODO: запись margin можно сократить margin: 49px 0 0 172px; */
+/*TODO: нельзя использовать дробные писксели, пиксель это минимальная единица, как точка */
   margin: 0;
   margin-top: 20px;
   margin-left: 172.29px;
@@ -215,6 +240,8 @@
   line-height: 26px;
 }
 .block__info button{
+/*TODO: запись margin можно сократить margin: 49px 0 0 172px; */
+/*TODO: нельзя использовать дробные писксели, пиксель это минимальная единица, как точка */
   margin: 0;
   margin-top: 20px;
   margin-left: 172.29px;
@@ -235,6 +262,7 @@
   border-radius: 50px;
 }
 .testimonials h3{
+  /*TODO: запись с margin можно сократить до одной margin: 109px 0 0 93px;*/
   margin: 0;
   margin-left: 93px;
   width: 405px;
@@ -255,6 +283,7 @@
   width: 645px;
   height: 330px;
   background-color: #FFFFFF;
+  /*TODO: не нужно указывать для нулевых значений единицы измерения, убрать px у нулей */
   box-shadow: 0px 20px 0px rgba(156, 105, 226, 0.3);
   border-radius: 20px;
 }
@@ -289,6 +318,7 @@
   width: 385px;
   font-size: 18px;
   font-weight: 400;
+/*TODO: дробные писксели */
   line-height: 32.4px;
   color: #4B5D68;
 }
@@ -333,6 +363,7 @@
 
 
 .footer{
+  /*TODO: лучше margin: 150px 0 0; */
   margin: 0;
   margin-top: 150px;
   width: 1600px;
@@ -342,6 +373,7 @@
 .footer__info{
   display: flex;
   justify-content: space-between;
+/*TODO: дробные пиксели - нельзя, они могут по-разному отображаться в браузерах, верстка поедет */
   margin-top: 123.17px;
   width: 1085px;
 }
@@ -358,6 +390,7 @@
 margin-left: 20px;
 }
 .textone{
+/*TODO: дробные пиксели - нельзя, они могут по-разному отображаться в браузерах, верстка поедет */
   margin-top: 63.73px;
   width: 360px;
   font-size: 16px;
@@ -369,6 +402,7 @@ margin-left: 20px;
   width: 360px;
   font-size: 16px;
   font-weight: 400;
+/*TODO: дробные пиксели - нельзя, они могут по-разному отображаться в браузерах, верстка поедет */
   line-height: 28.8px;
 }
 .textthree{
@@ -376,6 +410,7 @@ margin-left: 20px;
   width: 360px;
   font-size: 12px;
   font-weight: 400;
+/*TODO: дробные пиксели - нельзя, они могут по-разному отображаться в браузерах, верстка поедет */
   line-height: 21.6px;
 }
 .socialmedia{
@@ -386,6 +421,7 @@ margin-left: 20px;
   width: 170px;
 }
 .icons{
+/*TODO: дробные пиксели - нельзя, они могут по-разному отображаться в браузерах, верстка поедет */
   margin-top: 29.45px;
   width: 178px;
   display: flex;
@@ -393,6 +429,7 @@ margin-left: 20px;
 }
 .icon{
   width: 50px;
+/*TODO: дробные пиксели - нельзя, они могут по-разному отображаться в браузерах, верстка поедет */
   height: 49.08px;
 }
 
@@ -436,6 +473,7 @@ margin-left: 20px;
     display: none;
   }
   .main__info{
+/*TODO: опечатка*/
     width: 320x;
   }
   .main__info h2{
